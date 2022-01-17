@@ -1,0 +1,44 @@
+{
+    "version": 1,
+    "request": {
+        "url": "https://codeforces.com/api/problemset.problems",
+        "method": "GET",
+        "params": {
+            "contestId": false,
+            "apikey": false,
+            "time": false,
+            "apiSig": false
+        }
+    },
+    "response": {
+        "ctype": "application/json",
+        "tablePath": "$.result.problems[*]",
+        "schema": {
+            "contestId": {
+                "target": "$.contestId",
+                "type": "string"
+            },
+            "index": {
+                "target": "$.index",
+                "type": "string"
+            },
+            "name": {
+                "target": "$.name",
+                "type": "string"
+            },
+            "type": {
+                "target": "$.type",
+                "type": "string"
+            },
+            "points": {
+                "target": "$.points",
+                "type": "string"
+            },
+            "tags": {
+                "target": "$.tags",
+                "type": "string"
+            }
+        },
+        "orient": "records"
+    }
+}

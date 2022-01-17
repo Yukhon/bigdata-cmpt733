@@ -1,0 +1,7 @@
+{
+    "tables": [
+        "problems",
+        "contests",
+        "blog"
+    ]
+}
