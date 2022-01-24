@@ -1,7 +1,7 @@
 {
     "version": 1,
     "request": {
-        "url": "https://codeforces.com/api/contest.list?gym=true",
+        "url": "https://codeforces.com/api/problemset.problems",
         "method": "GET",
         "params": {
             "contestId": false,
@@ -12,10 +12,14 @@
     },
     "response": {
         "ctype": "application/json",
-        "tablePath": "$.result[*]",
+        "tablePath": "$.result.problems[*]",
         "schema": {
             "contestId": {
-                "target": "$.id",
+                "target": "$.contestId",
+                "type": "string"
+            },
+            "index": {
+                "target": "$.index",
                 "type": "string"
             },
             "name": {
@@ -26,17 +30,17 @@
                 "target": "$.type",
                 "type": "string"
             },
-            "phase": {
-                "target": "$.phase",
-                "type": "string"
+            "points": {
+                "target": "$.points",
+                "type": "float"
             },
-            "frozen": {
-                "target": "$.frozen",
-                "type": "boolean"
+            "rating": {
+                "target": "$.rating",
+                "type": "int"
             },
-            "difficulty": {
-                "target": "$.difficulty",
-                "type": "string"
+            "tags": {
+                "target": "$.tags",
+                "type": "list"
             }
         },
         "orient": "records"

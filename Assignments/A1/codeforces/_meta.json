@@ -1,7 +1,6 @@
 {
     "tables": [
-        "problems",
         "contests",
-        "blog"
+        "problems"
     ]
 }

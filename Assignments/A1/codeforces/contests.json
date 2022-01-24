@@ -1,0 +1,68 @@
+{
+    "version": 1,
+    "request": {
+        "url": "https://codeforces.com/api/contest.list?gym=true",
+        "method": "GET",
+        "params": {
+            "contestId": false,
+            "apikey": false,
+            "time": false,
+            "apiSig": false
+        }
+    },
+    "response": {
+        "ctype": "application/json",
+        "tablePath": "$.result[*]",
+        "schema": {
+            "contestId": {
+                "target": "$.id",
+                "type": "string"
+            },
+            "name": {
+                "target": "$.name",
+                "type": "string"
+            },
+            "type": {
+                "target": "$.type",
+                "type": "string"
+            },
+            "phase": {
+                "target": "$.phase",
+                "type": "string"
+            },
+            "durationSeconds": {
+                "target": "$.durationSeconds",
+                "type": "int"
+            },
+            "preparedBy": {
+                "target": "$.preparedBy",
+                "type": "string"
+            },
+            "kind": {
+                "target": "$.kind",
+                "type": "string"
+            },
+            "season": {
+                "target": "$.season",
+                "type": "string"
+            },
+            "city": {
+                "target": "$.city",
+                "type": "string"
+            },
+            "country": {
+                "target": "$.country",
+                "type": "string"
+            },
+            "frozen": {
+                "target": "$.frozen",
+                "type": "boolean"
+            },
+            "difficulty": {
+                "target": "$.difficulty",
+                "type": "int"
+            }
+        },
+        "orient": "records"
+    }
+}
